@@ -1,0 +1,14 @@
+<div class="calculator">
+    <div class="calculator__header">
+        <div class="header__left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="">
+            <p>Standart</p>
+        </div>
+        
+        <div>
+            <img src = "https://www.iconfinder.com/data/icons/google-material-design-icons/48/ic_history_48px-512.png" alt="filter applied">
+        </div>
+    </div>
+    <app-display [current]="displayCur" [history]="displayHist"></app-display>
+    <app-panel (onKeyPress)="handlePressKey($event)"></app-panel>
+</div>
