@@ -60,6 +60,10 @@ export class CalcComponent implements OnInit {
       this.num1 = (Math.sqrt(Number.parseFloat(this.displayCur)));
       this.dot = false;
     }
+    if(key == '±')
+    {
+      this.displayCur = (-1*Number.parseFloat(this.displayCur)).toString();
+    }
     if(this.displayCur == '0' && key == '0'){}
     else if(this.displayCur == '0' && key == ',') {
       this.displayCur += key;
@@ -88,6 +92,15 @@ export class CalcComponent implements OnInit {
       this.dot = false;
       this.displayHist = this.num1.toString() + this.operation; /*`${this.num1}`*/
     }
+    // if(this.operation)
+    // {
+    //   if(key == '%')
+    //   {
+    //     this.num2 = Number.parseFloat(this.displayCur);
+    //     this.displayCur = "";
+    //     this.displayHist += this.num2.toString();
+    //   }
+    // }
     if(key == '=')
     {
       if(this.operation && this.equalsPressed)
