@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+.wrapper {
+display: flex;
+gap: 1rem;
+flex: 1 0 0;
+padding: 2rem;
+    & a{
+        font-size: large;
+        color: black;
+    }
+}
+  

@@ -1,0 +1,21 @@
+:host{
+    width: 80%;
+}
+.question{
+    font-size: large;
+    // color: red;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    min-width: 80%;
+}
+.title{
+    color: red;
+    font-size: 30px;
+    padding: 5px;
+
+}
+.variants{
+    padding: 5px;
+    color: skyblue;
+}

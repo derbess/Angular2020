@@ -1,0 +1,39 @@
+<form [formGroup]="dynamicForm">
+    <div class="card">
+        <h4 class="form-title">Create own quiz</h4>
+        <div class="number-of-question">
+            <label>Number of Question</label>
+            <select formControlName="numberOfQuestion" class="form-control" (change)="onChangeQuestions($event)">
+                <option value=""></option>
+                <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+            </select>
+        </div>
+        <div *ngFor="let question of t.controls; let i = index" class="list-group list-group-flush">
+            <div class="list-group-item">
+                <h5 class="card-title">Question {{i + 1}}</h5>
+                <div [formGroup]="question" class="form-row">
+                    <div class="form-group col-6">
+                        <label>Question title</label>
+                        <input type="text" formControlName="title" class="form-control" />
+                    </div>
+                    <div  class="form-group">
+                        <label>Variants</label>
+                        <input type="text" formControlName="variant1" class="form-control" /> <input type="checkbox" [formControl]="checkboxControl1" class="iscorrect">
+                        <input type="text" formControlName="variant2" class="form-control" /> <input type="checkbox" [formControl]="checkboxControl2" class="iscorrect">
+                        <input type="text" formControlName="variant3" class="form-control" /> <input type="checkbox" [formControl]="checkboxControl3" class="iscorrect">
+                        <input type="text" formControlName="variant4" class="form-control" /> <input type="checkbox" [formControl]="checkboxControl4" class="iscorrect">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card-footer text-center">
+            <button class="btn btn-primary mr-1" type="submit" (click)="onSubmit()">Submit</button>
+            <button class="btn btn-secondary mr-1" type="reset" (click)="onReset()">Reset</button>
+            <button class="btn btn-secondary" type="button" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+
+    
+</form>

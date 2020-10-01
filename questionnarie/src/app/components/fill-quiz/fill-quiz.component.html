@@ -1,0 +1,23 @@
+<form>
+    <div *ngFor="let question of questions;let i = index" class="question">
+        <label>{{i+1}}.{{question.title}}</label>
+        <div class="variants" >
+            <div>
+                <input type="checkbox">
+                <label> {{question.variant1}}</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label> {{question.variant2}}</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label> {{question.variant3}}</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label> {{question.variant4}}</label>
+            </div>
+        </div>
+    </div>
+</form>
