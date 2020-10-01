@@ -35,6 +35,7 @@ export class CreateQuizComponent implements OnInit {
   // get v() {
   //   return this.t.variants as FormArray;
   // }
+  numberControl = new FormControl(1);
   checkboxControl1 = new FormControl(false);
   checkboxControl2 = new FormControl(false);
   checkboxControl3 = new FormControl(false);
@@ -46,6 +47,7 @@ export class CreateQuizComponent implements OnInit {
       for (let i = this.t.length; i < numberOfQuestion; i++) {
         this.t.push(
           this.formBuilder.group({
+            time: this.numberControl,
             title: ['', Validators.required],
             variant1: ['', Validators.required],
             iswrite1: this.checkboxControl1,
@@ -88,12 +90,12 @@ export class CreateQuizComponent implements OnInit {
     if (this.dynamicForm.invalid) {
       return;
     }
-    console.log(this.dynamicForm.value)
+    console.log(this.dynamicForm.value);
     // display form values on success
     alert(
       'SUCCESS!! :-)\n\n' + JSON.stringify(this.dynamicForm.value, null, 4)
     );
-    localStorage.setItem('dynamicForm',  JSON.stringify(this.dynamicForm.value));
+    localStorage.setItem('dynamicForm', JSON.stringify(this.dynamicForm.value));
   }
   onReset() {
     // reset whole form back to initial state

@@ -8,4 +8,8 @@ export interface Question {
     iswrite2: boolean;
     iswrite3: boolean;
     iswrite4: boolean;
+    time: number;
+
+    shouldShow?: boolean;
+    
   }

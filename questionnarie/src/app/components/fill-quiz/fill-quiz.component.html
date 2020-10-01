@@ -1,23 +1,31 @@
-<form>
-    <div *ngFor="let question of questions;let i = index" class="question">
-        <label>{{i+1}}.{{question.title}}</label>
-        <div class="variants" >
-            <div>
-                <input type="checkbox">
-                <label> {{question.variant1}}</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label> {{question.variant2}}</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label> {{question.variant3}}</label>
-            </div>
-            <div>
-                <input type="checkbox">
-                <label> {{question.variant4}}</label>
-            </div>
-        </div>
+<form [formGroup]="form">
+  <div *ngFor="let question of questions; let i = index" class="question" >
+      <div *ngIf="question.shouldShow">
+    <label class="title">{{ i + 1 }}.{{ question.title }}</label>
+    <label class="time">(Time : {{question.time}})</label>
+    <div class="variants">
+      <div>
+        <input type="checkbox" [formControl]="checkboxControl1" />
+        <label> {{ question.variant1 }}</label>
+      </div>
+      <div>
+        <input type="checkbox" [formControl]="checkboxControl2" />
+        <label> {{ question.variant2 }}</label>
+      </div>
+      <div>
+        <input type="checkbox" [formControl]="checkboxControl3" />
+        <label> {{ question.variant3 }}</label>
+      </div>
+      <div>
+        <input type="checkbox" [formControl]="checkboxControl4" />
+        <label> {{ question.variant4 }}</label>
+      </div>
     </div>
+    </div>
+  </div>
+
+  <div class="card-footer text-center">
+            <button class="btn btn-primary mr-1" type="submit" (click)="onSubmit()">Submit</button>
+            
+        </div>
 </form>
