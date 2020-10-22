@@ -1,0 +1,10 @@
+<mat-card class="comments">
+    <app-create-comment [post]="post" (onCommentSubmit)="onCommentWritten($event)"></app-create-comment>
+    <div class="comments-wrapper">
+        <div class="comment" *ngFor="let comment of comments">
+           <h2>{{comment.name}} </h2>
+           <h3>{{comment.email}}</h3>
+           <h4>{{comment.body}}</h4>
+        </div>
+    </div>
+</mat-card>

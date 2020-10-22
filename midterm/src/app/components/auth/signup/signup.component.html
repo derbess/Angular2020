@@ -1,0 +1,125 @@
+<div class="signup">
+  <mat-card class="input-form">
+    <form class="content" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Sign Up Form</h1>
+
+      <mat-form-field class="input-field">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" ngDefaultControl matInput type="text" />
+      </mat-form-field>
+      
+      <mat-form-field class="input-field">
+        <mat-label>Username</mat-label>
+        <input
+          formControlName="username"
+          ngDefaultControl
+          matInput
+          type="text"
+          autofocus
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" ngDefaultControl matInput type="text" />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Password</mat-label>
+        <input
+          formControlName="password"
+          ngDefaultControl
+          matInput
+          type="password"
+        />
+      </mat-form-field>
+      
+      <mat-form-field class="input-field">
+        <mat-label>Street</mat-label>
+        <input
+          [formControl]="form.get('address').get('street')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Suite</mat-label>
+        <input
+          [formControl]="form.get('address').get('suite')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>City</mat-label>
+        <input
+          [formControl]="form.get('address').get('city')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Zipcode</mat-label>
+        <input
+          [formControl]="form.get('address').get('zipcode')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Phone</mat-label>
+        <input formControlName="phone" ngDefaultControl matInput type="text" />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Website</mat-label>
+        <input
+          formControlName="website"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Company Name</mat-label>
+        <input
+          [formControl]="form.get('company').get('name')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Catch Phrase</mat-label>
+        <input
+          [formControl]="form.get('company').get('catchPhrase')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>BS</mat-label>
+        <input
+          [formControl]="form.get('company').get('bs')"
+          ngDefaultControl
+          matInput
+          type="text"
+        />
+      </mat-form-field>
+
+      <div class="buttons">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="btn-submit"
+          class="login-button"
+        >
+          Sigup
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

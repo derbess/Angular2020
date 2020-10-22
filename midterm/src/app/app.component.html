@@ -1,0 +1,13 @@
+<nav mat-tab-nav-bar class="app__nav">
+    <a
+      mat-tab-link
+      *ngFor="let link of links"
+      (click)="onClick(link)"
+      [active]="activeLink == link"
+      href="javascript:void(0)"
+    >
+      {{ link }}
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+  

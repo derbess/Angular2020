@@ -1,0 +1,24 @@
+<div class="login">
+  <mat-card class="input-form">
+    <form class="content" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1 class="title">Please authorize to continue</h1>
+      <mat-form-field class="input-field">
+        <mat-label>Login</mat-label>
+        <input formControlName="username" ngDefaultControl matInput type="text" placeholder="login" autofocus/>
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" ngDefaultControl matInput type="password" placeholder="password" />
+      </mat-form-field>
+
+      <div class="buttons">
+        <button mat-stroked-button color="primary" type="button" class="btn-submit" class="login-button" routerLink="/auth/signup">
+          Sigup
+        </button>
+        <button mat-raised-button color="primary" type="submit" class="btn-submit" class="login-button">
+          Signin
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

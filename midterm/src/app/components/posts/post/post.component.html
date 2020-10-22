@@ -1,0 +1,6 @@
+<mat-card class="post">
+  <p class="username">{{ user.name }}</p>
+  <p class="title">{{ post.title }}</p>
+  <p>{{ post.body }}</p>
+  <app-comments [post]="post"></app-comments>
+</mat-card>

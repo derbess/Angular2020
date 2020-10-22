@@ -1,0 +1,14 @@
+<div class="post-list-wrapper">
+    <mat-card class="filter">
+        <form class="content" [formGroup]="form">
+        <p>Filter by author</p>
+        <mat-form-field class="input-field">
+            <mat-label>Title</mat-label>
+            <input formControlName="author" ngDefaultControl matInput type="text" />
+          </mat-form-field>
+        </form>
+    </mat-card>
+    <div class="post-wrapper" *ngFor="let item of filteredList">
+        <app-post [post]="item" [user]="findUser(item.userId)"></app-post>
+    </div>
+</div>

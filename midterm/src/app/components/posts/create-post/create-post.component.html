@@ -1,0 +1,36 @@
+<div class="create">
+  <mat-card class="input-form">
+    <form class="content" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <h1>Create own Post</h1>
+
+      <mat-form-field class="input-field">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" ngDefaultControl matInput type="text" />
+      </mat-form-field>
+
+      <mat-form-field class="input-field">
+        <mat-label>body</mat-label>
+        <input formControlName="body" ngDefaultControl matInput type="text" /> <textarea
+        matInput
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="2"
+        formControlName="body"
+      ></textarea>
+      </mat-form-field>
+
+      <div class="buttons">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="btn-submit"
+          class="login-button"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
