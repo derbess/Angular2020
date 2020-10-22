@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post, Comment } from '../models/posts.model';
+import { Albom } from '../models/albom.models';
 import { User } from '../models/auth.models';
 
 @Injectable({
@@ -34,5 +35,9 @@ export class ApiService {
 
   createComment(postId: number, comment) {
     return this.http.post(`${this.BASE_URL}/posts/${postId}/comments`, comment);
+  }
+
+  getAlboms(userId: number) {
+    return this.http.get<Albom[]>(`${this.BASE_URL}/albums?userId=${userId}`);
   }
 }

@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class AppComponent  implements OnInit {
   constructor(private router: Router, private location: Location) {}
-  links = ['posts', 'posts/create', 'auth/login', 'auth/logout', 'auth/signup'];
+  links = ['posts', 'posts/create', 'auth/login', 'auth/logout', 'auth/signup', 'alboms'];
   activeLink = 'posts';
   ngOnInit() {
     this.router.events.subscribe(() => {
@@ -25,6 +25,9 @@ export class AppComponent  implements OnInit {
       }
       if (path === 'auth/signup') {
         this.activeLink = 'auth/signup';
+      }
+      if (path === 'alboms') {
+        this.activeLink = 'alboms';
       }
     });
   }

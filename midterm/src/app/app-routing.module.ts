@@ -6,28 +6,40 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: async () => {
-      const authModule = await import('./components/auth/auth.module').then((m) => m.AuthModule);
+      const authModule = await import('./components/auth/auth.module').then(
+        (m) => m.AuthModule
+      );
       return authModule;
     },
   },
   {
     path: '',
-      component: MainAuthPageComponent,
-      children: [
-        {
-          path: 'posts',
-          loadChildren: async () => {
-            const postsModule = await import('./components/posts/posts.module').then((m) => m.PostsModule);
-            return postsModule;
-          }
+    component: MainAuthPageComponent,
+    children: [
+      {
+        path: 'posts',
+        loadChildren: async () => {
+          const postsModule = await import(
+            './components/posts/posts.module'
+          ).then((m) => m.PostsModule);
+          return postsModule;
         },
-      ],
-    }
-  
+      },
+      {
+        path: 'alboms',
+        loadChildren: async () => {
+          const albomsModule = await import(
+            './components/albom/albom.module'
+          ).then((m) => m.AlbomModule);
+          return albomsModule;
+        },
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -17,7 +17,7 @@ export class CreateCommentComponent implements OnInit {
   ) {}
   form: FormGroup;
   @Input() post: Post;
-  @Output() onCommentSubmit = new EventEmitter<Comment[]>([]);
+  @Output() onCommentSubmit = new EventEmitter<Comment[]>();
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required]],
