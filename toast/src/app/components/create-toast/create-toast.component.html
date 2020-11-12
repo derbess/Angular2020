@@ -1,0 +1,29 @@
+<div>
+
+    <form [formGroup]="form">
+        <div>
+            <p>Toast title</p>
+            <input formControlName="title" type="text"/>
+        </div>
+        <div>
+            <p>Toast content</p>
+            <input formControlName="content" type="text"/>
+        </div>
+        <div>
+            <p>type</p>
+            <select formControlName="type">
+                <option value="SUCCESS">IsSucces</option>
+                <option value="FAILED">IsFailed</option>
+              </select>
+        </div>
+        <div>
+            <p>During</p>
+            <input formControlName="duration" type="number">
+        </div>
+        <div>
+            <p>Can close?</p>
+            <input formControlName="close" type="checkbox">
+        </div>
+    </form>
+
+</div>
