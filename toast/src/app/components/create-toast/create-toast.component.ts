@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from './../../services/toast.service';
+import { Toast } from './../../models/toast';
 
 @Component({
   selector: 'app-create-toast',
@@ -7,10 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-toast.component.scss']
 })
 export class CreateToastComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private toastService: ToastService) {}
   form: FormGroup;
-  verticalAlignment = ['TOP', 'CENTER', 'BOTTOM'];
-  horizontalAlignment = ['LEFT', 'CENTER', 'RIGHT'];
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -19,9 +19,11 @@ export class CreateToastComponent implements OnInit {
       type: ['', [Validators.required]],
       duration: [0, [Validators.required]],
       close: [true],
-      verticalPosition: ['BOTTOM', [Validators.required]],
-      horizontalPosition: ['RIGHT', [Validators.required]],
+      vertical: ['', [Validators.required]],
+      horizontal: ['', [Validators.required]],
     });
   }
-
+  onSubmit(form: FormGroup) {
+    this.toastService.createNewToast(form.value as Toast, form.value.vertical, form.value.horizontal);
+  }
 }

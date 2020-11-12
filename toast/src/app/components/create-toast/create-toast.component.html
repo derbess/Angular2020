@@ -1,6 +1,6 @@
 <div>
 
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
         <div>
             <p>Toast title</p>
             <input formControlName="title" type="text"/>
@@ -24,6 +24,25 @@
             <p>Can close?</p>
             <input formControlName="close" type="checkbox">
         </div>
+        <div>
+            <p>Vertical</p>
+            <select formControlName="vertical">
+                <option value="TOP">TOP</option>
+                <option value="CENTER">CENTER</option>
+                <option value="BOTTOM">BOTTOM</option>
+
+              </select>
+        </div>
+        <div>
+            <p>Horizontal</p>
+            <select formControlName="horizontal">
+                <option value="LEFT">LEFT</option>
+                <option value="CENTER">CENTER</option>
+                <option value="RIGHT">RIGHT</option>
+
+              </select>
+        </div>
+    <button type="submit" [disabled]="form.invalid">Generate</button>
     </form>
 
 </div>
