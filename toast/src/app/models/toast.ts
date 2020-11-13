@@ -6,6 +6,8 @@ export interface Toast {
     content: string;
     duration: number;
     close: boolean;
+    time: boolean;
+    showtitle: boolean;
   
   }
   export interface location extends Toast {

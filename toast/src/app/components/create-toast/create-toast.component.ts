@@ -19,6 +19,8 @@ export class CreateToastComponent implements OnInit {
       type: ['', [Validators.required]],
       duration: [0, [Validators.required]],
       close: [true],
+      time: [true],
+      showtitle: [true],
       vertical: ['', [Validators.required]],
       horizontal: ['', [Validators.required]],
     });
