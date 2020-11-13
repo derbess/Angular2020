@@ -1,8 +1,16 @@
+import { ToastService } from '../services/toast.service';
+
 export interface Toast {
     title: string;
     type: string;
     content: string;
     duration: number;
     close: boolean;
+  
+  }
+  export interface location extends Toast {
+    index: number;
+    x: string;
+    y: string;
   
   }

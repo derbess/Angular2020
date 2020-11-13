@@ -1,1 +1,6 @@
-<p>toast works!</p>
+<div class="toast success" [ngStyle]="style">
+    <button class ="close" *ngIf="toast.close" (click)="deleteToast()">x</button>
+    <p>{{toast.type}}</p>
+    <p>{{toast.title}}</p>
+    <p>{{toast.content}}</p>
+</div>

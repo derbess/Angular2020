@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Toast } from './../models/toast';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+import { location, Toast } from './../models/toast';
 
 
 @Injectable({
@@ -8,8 +10,25 @@ import { Toast } from './../models/toast';
 export class ToastService {
 
   constructor() { }
+  private toastsSource = new BehaviorSubject<location[]>([]);
+  toasts$ = this.toastsSource.asObservable();
+  vertical = "RIGHT";
+  horizontal = "BOTTOM";
+  index = 0;
+  createNewToast(toast: Toast, vertical: string, horizontal: string){
+    this.horizontal = horizontal;
+    this.vertical = vertical;
+    this.index = this.index + 1;
+    const toasts = [...this.toastsSource.value, { ...toast, x: `0px`, y: `0px`, index: this.index }];
+    console.log(toasts, vertical, horizontal);
+    this.calcPos(toasts);
+  }
+  deleteToast(index: number) {
+    const toasts = this.toastsSource.value.filter(item => item.index !== index);
+    this.calcPos(toasts);
+  }
 
-  createNewToast(toast: Toast, vertical: String, horizontal: String){
-    console.log(toast, vertical, horizontal);
+  calcPos(toasts: location[]) {
+    this.toastsSource.next(toasts);
   }
 }
