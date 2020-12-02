@@ -1,0 +1,55 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+        <div class="field">
+            <p>Toast title</p>
+            <input formControlName="title" type="text"/>
+        </div>
+        <div class="field">
+            <p>Toast content</p>
+            <input formControlName="content" type="text"/>
+        </div>
+        <div class="field">
+            <p>type</p>
+            <select formControlName="type">
+                <option value="SUCCESS">IsSucces</option>
+                <option value="FAILED">IsFailed</option>
+              </select>
+        </div>
+        <div class="field">
+            <p>During</p>
+            <input formControlName="duration" type="number">
+        </div>
+        <div class="field">
+            <p>Can close?</p>
+            <input formControlName="close" type="checkbox">
+        </div>
+        <div class="field">
+            <p>Time?</p>
+            <input formControlName="time" type="checkbox">
+        </div>
+        <div class="field">
+            <p>Title show?</p>
+            <input formControlName="showtitle" type="checkbox">
+        </div>
+        <div class="field">
+            <p>Vertical</p>
+            <select formControlName="vertical">
+                <option value="TOP">TOP</option>
+                <option value="CENTER">CENTER</option>
+                <option value="BOTTOM">BOTTOM</option>
+
+              </select>
+        </div>
+        <div class="field">
+            <p>Horizontal</p>
+            <select formControlName="horizontal">
+                <option value="LEFT">LEFT</option>
+                <option value="CENTER">CENTER</option>
+                <option value="RIGHT">RIGHT</option>
+
+              </select>
+        </div>
+    <button type="submit" [disabled]="form.invalid">Generate</button>
+    </form>
+
+</div>

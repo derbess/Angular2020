@@ -1,0 +1,14 @@
+.field {
+    display: flex;
+    flex-direction: row;
+    input {
+        padding: 10px 5px;
+        height: 15px;
+    }
+    p {
+        padding: 5px;
+    }
+    select {
+        height: 20px;
+    }
+}
