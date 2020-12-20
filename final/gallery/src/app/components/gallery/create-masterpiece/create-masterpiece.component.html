@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <mat-card class="card">
+        <form class="create" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h1>Create New MasterPiece</h1>
+            <mat-form-field class="input">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" ngDefaultControl matInput type="text" />
+              </mat-form-field>
+        
+              <mat-form-field class="input">
+                <mat-label>Type</mat-label>
+                <mat-select formControlName="type" ngDefaultControl matInput type="text" >
+                    <mat-option value="Painting">Painting</mat-option>
+                    <mat-option value="Sculpture">Sculpture</mat-option>
+                    <mat-option value="Portrait">Portraits</mat-option>
+                    <mat-option value="Landscape">Landscapes</mat-option>
+                    <mat-option value="Melody">Melody</mat-option>
+                    <mat-option value="Artifact">Artifact</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="input">
+                <mat-label>Year</mat-label>
+                <input formControlName="year" ngDefaultControl matInput type="number" />
+              </mat-form-field>
+              <mat-form-field class="input">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" ngDefaultControl matInput type="text" />
+              </mat-form-field>
+              <mat-form-field class="input">
+                <mat-label>Source</mat-label>
+                <input formControlName="source" ngDefaultControl matInput type="text" />
+              </mat-form-field>
+              <mat-form-field class="input">
+                <mat-label>Author</mat-label>
+                <input formControlName="author" ngDefaultControl matInput type="text" />
+              </mat-form-field>
+              <mat-form-field class="input">
+                <mat-label>Museum</mat-label>
+                <input formControlName="museumId" ngDefaultControl matInput type="number" />
+              </mat-form-field>
+
+              <button mat-raised-button color="primary" type="submit" class="btn-submit" class="book-create-button">
+                Create MS
+              </button>
+        
+        </form>
+    </mat-card>
+</div>

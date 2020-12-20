@@ -1,0 +1,4 @@
+<div class="masterpiece-wrapper" *ngFor="let m of mp">
+    <app-update-masterpiece 
+     [mp]="m" (handleChanges)="upd()" ></app-update-masterpiece>
+</div>

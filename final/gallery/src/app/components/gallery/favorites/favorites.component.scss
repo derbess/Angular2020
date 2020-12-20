@@ -1,0 +1,26 @@
+.wrapper {
+    width: 100%;
+    background-color: antiquewhite;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    .ms-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+
+    .mpcard{
+        // margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+            max-width: 60%;
+            max-height: 500px;
+            margin: 0 auto;
+            object-fit: contain;
+            // width: auto;
+        }
+    }
+}

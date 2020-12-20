@@ -1,0 +1,4 @@
+<div class="museums-wrapper" *ngFor="let m of museums" >
+    <app-museum (click)="museumClick(m.id)" [museum]="m"></app-museum>
+</div>
+<mat-card (click)="museumClick(0)">Clear</mat-card>

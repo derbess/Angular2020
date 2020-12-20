@@ -1,0 +1,79 @@
+<div class="wrapper">
+    <mat-card color="primary" class="mpcard" *ngIf="!onUpdate">
+      <mat-card-header>
+        <mat-card-title>{{ mp.name }}</mat-card-title>
+        <mat-card-subtitle>{{ mp.author }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ mp.type }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ mp.source }}" />
+      <p>{{ mp.year }}</p>
+      <p>{{ mp.description }}</p>
+      <button mat-raised-button color="primary" (click)="delete()">Delete</button>
+      <button mat-raised-button color="primary" (click)="update()">Update</button>
+    </mat-card>
+    <mat-card color="primary" class="mpcard" *ngIf="onUpdate">
+      <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Update {{mp.name}}</h1>
+        <mat-form-field class="input">
+          <mat-label>Name</mat-label>
+          <input
+            formControlName="name"
+            ngDefaultControl
+            matInput
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Type</mat-label>
+          <input
+            formControlName="type"
+            ngDefaultControl
+            matInput
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Year</mat-label>
+          <input formControlName="year" ngDefaultControl matInput type="number" />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Author</mat-label>
+          <input
+            formControlName="author"
+            ngDefaultControl
+            matInput
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Description</mat-label>
+          <input
+            formControlName="description"
+            ngDefaultControl
+            matInput
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Source</mat-label>
+          <input
+            formControlName="source"
+            ngDefaultControl
+            matInput
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Museum ID</mat-label>
+          <input
+            formControlName="museumId"
+            ngDefaultControl
+            matInput
+            type="number"
+          />
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="primary" type="button" (click)="cancel()">Cancel</button>
+      </form>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,16 @@
+<nav mat-tab-nav-bar class="nav">
+  <div class="nav__items">
+    <div>
+    <a mat-tab-link [routerLink]="['/auth/login']" *ngIf="!isSignedIn"> Login </a>
+    <a mat-tab-link [routerLink]="['/auth/register']" *ngIf="!isSignedIn"> Register </a>
+    <a mat-tab-link [routerLink]="['/gallery']"> Gallery </a>
+    <a mat-tab-link [routerLink]="['/gallery/favorites']" *ngIf="isSignedIn && !isAdminUser">Favorites </a>
+    <a mat-tab-link [routerLink]="['/gallery/create-museum']" *ngIf="isSignedIn && isAdminUser">Create Masterpieces </a>
+    <a mat-tab-link [routerLink]="['/gallery/edit']" *ngIf="isSignedIn && isAdminUser"> Edit </a>
+  </div>
+  <div>
+    <a mat-tab-link (click) = "logout()" [routerLink]="['/auth/login']" *ngIf="isSignedIn"> Logout </a>
+  </div>
+</div>
+</nav>
+<router-outlet></router-outlet>

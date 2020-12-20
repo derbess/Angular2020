@@ -1,0 +1,26 @@
+.mpcard{
+    // margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    img {
+        max-width: 60%;
+        max-height: 500px;
+        margin: 0 auto;
+        object-fit: contain;
+        // width: auto;
+    }
+
+    
+}
+.added {
+    background-color: #000;
+}
+.wrapper {
+    // background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}

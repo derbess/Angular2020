@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="ms-list" *ngIf="masterpieces.length > 0">
+    <mat-card color="primary" class="mpcard" *ngFor="let mp of masterpieces">
+      <mat-card-header>
+        <mat-card-title>{{ mp.name }}</mat-card-title>
+        <mat-card-subtitle>{{ mp.author }}</mat-card-subtitle>
+        <mat-card-subtitle>{{ mp.type }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ mp.source }}" />
+      <p>{{ mp.year }}</p>
+      <p>{{ mp.description }}</p>
+    </mat-card>
+  </div>
+  <div class="no-content" *ngIf="masterpieces.length === 0">
+    You did not choose favorite masterpieces yet. To do that go to gallery : 3
+  </div>
+</div>

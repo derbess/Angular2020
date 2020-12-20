@@ -1,0 +1,20 @@
+<div class="gallery">
+  <div class="filters">
+    <div class="museums">
+      <app-museums (selectMuseum)="chooseMuseum($event)"></app-museums>
+    </div>
+    <div class="types">
+        <mat-card (click)='typeClick("Painting")' >Painting</mat-card>
+        <mat-card (click)='typeClick("Sculpture")' >Sculpture</mat-card>
+        <mat-card (click)='typeClick("Portrait")' >Portrait</mat-card>
+        <mat-card (click)='typeClick("Landscape")' >Landscape</mat-card>
+        <mat-card (click)='typeClick("Melody")' >Melody</mat-card>
+        <mat-card (click)='typeClick("Artifact")' >Artifact</mat-card>
+
+
+    </div>
+  </div>
+  <div class="masterpieces">
+    <app-masterpieces [mp]="mp"></app-masterpieces>
+  </div>
+</div>
